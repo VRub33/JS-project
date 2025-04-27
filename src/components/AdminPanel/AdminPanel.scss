@@ -1,0 +1,19 @@
+ @media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+    
+    table {
+      width: auto;
+      min-width: 100%;
+    }
+    
+    th:first-child,
+    td:first-child {
+      position: sticky;
+      left: 0;
+      background: var(--bs-body-bg);
+      z-index: 1;
+    }
+  }
+}
+

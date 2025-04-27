@@ -2,22 +2,35 @@ import React, { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import { useLoginState } from '../../hooks/useLoginState';
 import ProfileMenu from '../Profile/ProfileMenu';
-import Navigation from '../Navigation';
-import './Header.css';
+import Navigation from '../Navigation/Navigation';
+import { Navbar, Container, Button, Stack } from 'react-bootstrap';
+import './Header.scss';
+import Menu from '../Menu/Menu';
 
-const Header = () => {
+const Header = ({ onLabSelect }) => {
   const isLoggedIn = useLoginState();
-  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useContext(ThemeContext);
 
   return (
-    <header className="header">
-      <div className="header-content">
+    <Navbar className="header py-2">
+      <Container fluid className="d-flex align-items-center">
+        <Menu onLabSelect={onLabSelect} />
+        <Navbar.Brand href="/" className="me-4">
+          Лабораторные<br className="d-sm-none" /> работы
+        </Navbar.Brand>
         <Navigation />
-        <div className="header-buttons">
-          <button className="theme-toggle" onClick={toggleTheme}>
+      
+
+        <Stack direction="horizontal" gap={3} className="ms-3">
+          <Button 
+            variant="outline-light" 
+            onClick={toggleTheme}
+            className="theme-toggle"
+            aria-label="Toggle theme"
+          >
             <svg 
-              width="24" 
-              height="24" 
+              width="20" 
+              height="20" 
               viewBox="0 0 24 24" 
               fill="none" 
               stroke="currentColor" 
@@ -35,11 +48,12 @@ const Header = () => {
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
             </svg>
-          </button>
+          </Button>
+          
           {isLoggedIn && <ProfileMenu />}
-        </div>
-      </div>
-    </header>
+        </Stack>
+      </Container>
+    </Navbar>
   );
 };
 

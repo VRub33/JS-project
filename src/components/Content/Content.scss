@@ -1,0 +1,64 @@
+.content {
+  height: 100%;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  
+  .card {
+    background-color: var(--bs-body-bg);
+    
+    .lab-content {
+      padding: 0.5rem;
+      
+      h3 {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+      
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+      
+      pre {
+        background-color: var(--bs-secondary-bg);
+        padding: 1rem;
+        border-radius: 0.25rem;
+        overflow-x: auto;
+      }
+      
+      code {
+        font-family: monospace;
+        background-color: var(--bs-secondary-bg);
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.2rem;
+      }
+    }
+  }
+}
+
+[data-bs-theme="dark"] {
+  .content {
+    .card {
+      background-color: var(--bs-dark-bg-subtle);
+      
+      .lab-content {
+        pre, code {
+          background-color: rgba(0, 0, 0, 0.3);
+          color: var(--bs-light);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .content {
+    padding: 1rem !important;
+    
+    .card {
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
+  }
+}
