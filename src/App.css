@@ -1,0 +1,97 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --header-bg: #ceac4d;
+  --footer-bg: #2c2c2c;
+  --menu-bg: #aad1df;
+  --content-bg: #f8f8f8;
+  --border-color: #dee2e6;
+}
+
+[data-theme='dark'] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --header-bg: #2c2c2c;
+  --footer-bg: #2c2c2c;
+  --menu-bg: #333333;
+  --content-bg: #1a1a1a;
+  --border-color: #404040;
+}
+
+.app {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: var(--header-bg);
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.menu {
+  background-color: var(--menu-bg);
+  padding: 1rem;
+  min-width: 220px;
+  max-width: 220px;
+  border-right: 1px solid var(--border-color);
+}
+
+.content {
+  background-color: var(--content-bg);
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.content h2 {
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background-color: var(--footer-bg);
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.toggle-form-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #579cb8;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.toggle-form-button:hover {
+  color: #487e94;
+}
